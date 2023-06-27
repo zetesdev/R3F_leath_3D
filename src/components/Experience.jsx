@@ -1,12 +1,15 @@
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls } from '@react-three/drei';
+import { Model } from './Model';
 
-export const Experience = () => {
+function Experience() {
   return (
     <>
       <OrbitControls />
-      <mesh>
-        <boxGeometry />
-      </mesh>
+      <ambientLight intensity={1} />
+
+      <Model scale={10} />
     </>
   );
-};
+}
+
+export default Experience;
