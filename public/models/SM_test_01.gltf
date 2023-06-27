@@ -73,12 +73,6 @@
 			"doubleSided":true,
 			"name":"M_test_01",
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0,
-					0,
-					0,
-					1
-				],
 				"roughnessFactor":0.20000000298023224
 			}
 		}

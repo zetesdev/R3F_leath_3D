@@ -1,12 +1,11 @@
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Environment } from '@react-three/drei';
 import { Model } from './Model';
 
 function Experience() {
   return (
     <>
       <OrbitControls />
-      <ambientLight intensity={1} />
-
+      <Environment background files='studio_small_08_1k.hdr' />
       <Model scale={10} />
     </>
   );
