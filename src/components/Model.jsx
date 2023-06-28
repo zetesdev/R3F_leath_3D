@@ -1,7 +1,12 @@
 import { useGLTF } from '@react-three/drei';
 
 export function Model(props) {
+  const { progress } = props;
   const { nodes, materials } = useGLTF('/models/SM_test_01.gltf');
+
+  const customRotation = [0, 0, 0];
+
+  if (progress > 0) customRotation[2] = 30;
 
   return (
     <group {...props} dispose={null}>
@@ -9,7 +14,7 @@ export function Model(props) {
         geometry={nodes.element_02.geometry}
         material={materials.M_test_02}
         position={[-0.029977, 0.005329, 0.002927]}
-        rotation={[0, 0, 30]}
+        rotation={customRotation}
       >
         <mesh
           geometry={nodes.element_03.geometry}
