@@ -1,4 +1,4 @@
-function AnimTrigger({ progress, changeProgress }) {
+function AnimTrigger({ changeProgress }) {
   return (
     <button
       onClick={changeProgress}

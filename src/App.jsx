@@ -7,9 +7,8 @@ import AnimTrigger from './components/AnimTrigger';
 function App() {
   const [progress, setProgress] = useState(0);
 
-  const changeProgress = () => {
+  const handleChangeProgress = () => {
     setProgress(progress + 1);
-    // console.log(progress);
   };
 
   return (
@@ -17,7 +16,7 @@ function App() {
       <Canvas>
         <Experience progress={progress} />
       </Canvas>
-      <AnimTrigger progress={progress} changeProgress={changeProgress} />
+      <AnimTrigger progress={progress} changeProgress={handleChangeProgress} />
     </>
   );
 }

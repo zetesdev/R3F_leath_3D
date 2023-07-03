@@ -6,8 +6,6 @@ export function Model(props) {
 
   const customRotation = [0, 0, 0];
 
-  if (progress > 0) customRotation[2] = 30;
-
   return (
     <group {...props} dispose={null}>
       <mesh
