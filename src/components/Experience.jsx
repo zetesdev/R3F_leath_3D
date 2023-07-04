@@ -22,23 +22,23 @@ function Experience({ progress }) {
     [2.029, 0.3, -2.59],
   ];
 
-  useFrame(() => {
-    const camera = cameraRef.current;
-    if (camera) {
-      console.log(
-        'Position:',
-        camera.position.x,
-        camera.position.y,
-        camera.position.z
-      );
-      console.log(
-        'Rotation:',
-        camera.rotation.x,
-        camera.rotation.y,
-        camera.rotation.z
-      );
-    }
-  });
+  // useFrame(() => {
+  //   const camera = cameraRef.current;
+  //   if (camera) {
+  //     console.log(
+  //       'Position:',
+  //       camera.position.x,
+  //       camera.position.y,
+  //       camera.position.z
+  //     );
+  //     console.log(
+  //       'Rotation:',
+  //       camera.rotation.x,
+  //       camera.rotation.y,
+  //       camera.rotation.z
+  //     );
+  //   }
+  // });
 
   return (
     <>
@@ -48,13 +48,14 @@ function Experience({ progress }) {
         position={positions[progress]}
         rotation={rotations[progress]}
       />
-      <OrbitControls
+      {/* <OrbitControls
         camera={cameraRef.current}
         enableZoom={true}
         enableRotate={true}
         enablePan={true}
-      />
+      /> */}
       <Environment background files='studio_small_08_1k.hdr' />
+
       <Model scale={10} progress={progress} />
     </>
   );

@@ -8,7 +8,7 @@ function App() {
   const [progress, setProgress] = useState(0);
 
   const handleChangeProgress = () => {
-    setProgress(progress + 1);
+    setProgress((prevProgress) => prevProgress + 1);
   };
 
   return (
