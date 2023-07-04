@@ -11,13 +11,13 @@ import { motion } from 'framer-motion-3d';
 function Experience({ progress }) {
   const cameraRef = useRef();
 
-  const positions = [
+  const camPositions = [
     [-0.48, 0.66, 0.84],
     [0.44, 0.26, 0.29],
     [0.2, -0.58, -0.28],
   ];
 
-  const rotations = [
+  const camRotations = [
     [-0.67, -0.42, -0.31],
     [-0.73, 0.84, 0.59],
     [2.029, 0.3, -2.59],
@@ -41,20 +41,23 @@ function Experience({ progress }) {
   //   }
   // });
 
+  const [camPositionX, camPositionY, camPositionZ] = camPositions[progress];
+  const [camRotateX, camRotateY, camRotateZ] = camRotations[progress];
+
   return (
     <>
       <motion.group
         name='cameraParent'
-        position={positions[0]}
-        rotation={rotations[0]}
+        position={camPositions[0]}
+        rotation={camRotations[0]}
         animate={{
-          x: positions[progress][0],
-          y: positions[progress][1],
-          z: positions[progress][2],
+          x: camPositionX,
+          y: camPositionY,
+          z: camPositionZ,
 
-          rotateX: rotations[progress][0],
-          rotateY: rotations[progress][1],
-          rotateZ: rotations[progress][2],
+          rotateX: camRotateX,
+          rotateY: camRotateY,
+          rotateZ: camRotateZ,
         }}
         transition={{
           duration: 1,
