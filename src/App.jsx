@@ -9,6 +9,7 @@ function App() {
 
   const handleChangeProgress = () => {
     setProgress((prevProgress) => prevProgress + 1);
+    console.log(progress);
   };
 
   return (
