@@ -1,9 +1,9 @@
 import { useRef } from 'react';
-import { useFrame } from '@react-three/fiber';
 import {
   Environment,
   PerspectiveCamera,
   OrbitControls,
+  Float,
 } from '@react-three/drei';
 import { Model } from './Model';
 import { motion } from 'framer-motion-3d';
@@ -46,33 +46,34 @@ function Experience({ progress }) {
 
   return (
     <>
-      <motion.group
-        name='cameraParent'
-        position={camPositions[0]}
-        rotation={camRotations[0]}
-        animate={{
-          x: camPositionX,
-          y: camPositionY,
-          z: camPositionZ,
+      <Float>
+        <motion.group
+          name='cameraParent'
+          position={camPositions[0]}
+          rotation={camRotations[0]}
+          animate={{
+            x: camPositionX,
+            y: camPositionY,
+            z: camPositionZ,
 
-          rotateX: camRotateX,
-          rotateY: camRotateY,
-          rotateZ: camRotateZ,
-        }}
-        transition={{
-          duration: 1,
-          ease: 'easeInOut',
-        }}
-      >
-        <PerspectiveCamera ref={cameraRef} makeDefault />
-      </motion.group>
-
-      {/* <OrbitControls
+            rotateX: camRotateX,
+            rotateY: camRotateY,
+            rotateZ: camRotateZ,
+          }}
+          transition={{
+            duration: 1,
+            ease: 'easeInOut',
+          }}
+        >
+          <PerspectiveCamera ref={cameraRef} makeDefault />
+        </motion.group>
+      </Float>
+      <OrbitControls
         camera={cameraRef.current}
         enableZoom={true}
         enableRotate={true}
         enablePan={true}
-      /> */}
+      />
       <Environment background files='studio_small_08_1k.hdr' />
       {/* <motion.mesh
         animate={{
