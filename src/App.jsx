@@ -3,29 +3,40 @@ import { useState, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import Experience from './components/Experience';
 import AnimTrigger from './components/AnimTrigger';
-import Scroller from './components/Scroller';
 
 function App() {
   const [progress, setProgress] = useState(0);
   const touchValueY = useRef(0);
   const touchMoveDown = useRef(null);
 
+  const decrementProgress = () => {
+    setProgress((prevProgress) =>
+      prevProgress === 0 ? prevProgress : prevProgress - 1
+    );
+  };
+  //CAMERA ANIMATION STEPS HERE
+  const incrementProgress = () => {
+    setProgress((prevProgress) =>
+      prevProgress === 2 ? prevProgress : prevProgress + 1
+    );
+  };
+
   const handleChangeProgress = (e) => {
     switch (e.type) {
       case 'wheel':
-        setProgress((prevProgress) => prevProgress + 1);
-        console.log('Mouse:', e.deltaY);
+        e.deltaY > 0 ? incrementProgress() : decrementProgress();
+        // console.log('Mouse:', e.deltaY);
         break;
 
       case 'touchmove':
         touchMoveDown.current = e.touches[0].clientY >= touchValueY.current;
         touchValueY.current = e.touches[0].clientY;
-        console.log('tochMoveDown', touchMoveDown.current);
+        // console.log('tochMoveDown', touchMoveDown.current);
         break;
 
       case 'touchend':
+        touchMoveDown.current ? incrementProgress() : decrementProgress();
         console.log('FINAL:', touchValueY.current);
-        setProgress((prevProgress) => prevProgress + 1);
         break;
 
       default:
@@ -39,7 +50,6 @@ function App() {
 
   return (
     <>
-      <Scroller />
       <Canvas
         onWheel={handleChangeProgress}
         onTouchMove={handleChangeProgress}
