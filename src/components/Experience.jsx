@@ -46,28 +46,29 @@ function Experience({ progress }) {
 
   return (
     <>
-      <Float>
-        <motion.group
-          name='cameraParent'
-          position={camPositions[0]}
-          rotation={camRotations[0]}
-          animate={{
-            x: camPositionX,
-            y: camPositionY,
-            z: camPositionZ,
+      <motion.group
+        name='cameraParent'
+        position={camPositions[0]}
+        rotation={camRotations[0]}
+        animate={{
+          x: camPositionX,
+          y: camPositionY,
+          z: camPositionZ,
 
-            rotateX: camRotateX,
-            rotateY: camRotateY,
-            rotateZ: camRotateZ,
-          }}
-          transition={{
-            duration: 1,
-            ease: 'easeInOut',
-          }}
-        >
+          rotateX: camRotateX,
+          rotateY: camRotateY,
+          rotateZ: camRotateZ,
+        }}
+        transition={{
+          duration: 1,
+          ease: 'easeInOut',
+        }}
+      >
+        <Float>
           <PerspectiveCamera ref={cameraRef} makeDefault />
-        </motion.group>
-      </Float>
+        </Float>
+      </motion.group>
+
       {/* <OrbitControls
         camera={cameraRef.current}
         enableZoom={true}

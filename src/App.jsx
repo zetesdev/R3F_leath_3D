@@ -3,9 +3,17 @@ import { useState, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import Experience from './components/Experience';
 import AnimTrigger from './components/AnimTrigger';
+import About from './components/About';
 
 function App() {
   const [progress, setProgress] = useState(0);
+  const [showAbout, setShowAbout] = useState(false);
+
+  const handleSetShowAbout = () => {
+    setShowAbout((prevShowAbout) => !prevShowAbout);
+  };
+
+  ///HANDLE PROGRESS
   const touchValueY = useRef(0);
   const touchMoveDown = useRef(null);
 
@@ -14,7 +22,7 @@ function App() {
       prevProgress === 0 ? prevProgress : prevProgress - 1
     );
   };
-  //CAMERA ANIMATION STEPS HERE
+  //CAMERA ANIMATION MAXIMUM STEPS HERE
   const incrementProgress = () => {
     setProgress((prevProgress) =>
       prevProgress === 2 ? prevProgress : prevProgress + 1
@@ -55,29 +63,12 @@ function App() {
         onTouchMove={handleChangeProgress}
         onTouchEnd={handleChangeProgress}
       >
-        {/* <ScrollControls pages={1} damping={0.1}> */}
         <Experience progress={progress} />
-
-        {/* <Scroll html>
-            <div className='bg-slate-600 h-20 mb-96'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-              assumenda saepe, obcaecati ipsam sit qui tenetur doloremque labore
-              atque est cupiditate omnis dolorum quaerat ex repudiandae
-              voluptatibus? Sapiente, veritatis nam.
-            </div>
-            <div className='bg-slate-600 h-20 mb-96'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-              assumenda saepe, obcaecati ipsam sit qui tenetur doloremque labore
-              atque est cupiditate omnis dolorum quaerat ex repudiandae
-              voluptatibus? Sapiente, veritatis nam.
-            </div>
-            <div className='bg-slate-600 h-20 mb-96'>TEST</div>
-            <div className='bg-slate-600 h-20 mb-96'>TEST</div>
-            <div className='bg-slate-600 h-20 mb-96'>TEST</div>
-          </Scroll>
-        </ScrollControls> */}
       </Canvas>
+      <About showAbout={showAbout} setShowAbout={handleSetShowAbout} />
+
       <AnimTrigger progress={progress} changeProgress={handleChangeProgress} />
+
       <button
         onClick={debugLog}
         className='z-23 fixed bottom-10 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-red-500 w-auto h-11 rounded-md'
