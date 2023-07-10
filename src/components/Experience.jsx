@@ -64,17 +64,9 @@ function Experience({ progress }) {
           ease: 'easeInOut',
         }}
       >
-        <Float>
-          <PerspectiveCamera ref={cameraRef} makeDefault />
-        </Float>
+        <PerspectiveCamera ref={cameraRef} makeDefault />
       </motion.group>
 
-      {/* <OrbitControls
-        camera={cameraRef.current}
-        enableZoom={true}
-        enableRotate={true}
-        enablePan={true}
-      /> */}
       <Environment background files='studio_small_08_1k.hdr' />
       {/* <motion.mesh
         animate={{

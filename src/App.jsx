@@ -3,7 +3,8 @@ import { useState, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import Experience from './components/Experience';
 import AnimTrigger from './components/AnimTrigger';
-import About from './components/About';
+import About from './components/AboutDev';
+import { OrbitControls } from '@react-three/drei';
 
 function App() {
   const [progress, setProgress] = useState(0);
