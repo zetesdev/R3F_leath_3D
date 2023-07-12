@@ -1,7 +1,5 @@
-import headphoneImage from '../assets/images/headphone.png';
-import heart from '../assets/images/heart.png';
-import weight from '../assets/images/weight.png';
-import { FaBehance, FaLinkedin, FaBars, FaX } from 'react-icons/fa6';
+import facePhoto from '../assets/images/cropped_02_web_01.png';
+import { FaBehance, FaLinkedin, FaBars, FaXmark } from 'react-icons/fa6';
 
 //https://cdn.cmsfly.com/635bcad9b8a74e0091632998/muazzim-portfolio-1sl3Ip.webp  //reference link
 
@@ -17,11 +15,12 @@ function About({ showAbout, setShowAbout }) {
     <>
       <button
         onClick={setShowAbout}
-        className='z-30 flex text-xl items-center justify-between px-3 py-1 text-white fixed top-0 right-0 bg-indigo-600 w-28 lg:top-12 lg:right-12'
+        className='z-30 flex text-xl items-center justify-between text-white fixed top-0 right-0 bg-sky-500 w-32 h-auto lg:top-12 lg:right-12'
       >
-        <div>{showAbout ? 'CLOSE' : 'ABOUT'}</div>
-        <FaBars></FaBars>
-        <FaX></FaX>
+        <div className='mt-0'>{showAbout ? 'CLOSE' : 'ABOUT'}</div>
+        {/* <FaXmark />
+        <FaBars /> */}
+        {showAbout ? <FaXmark /> : <FaBars />}
         {/* <div
           className={`bg-white h-0.5 rounded-md w-full transition-all ${
             showAbout ? 'rotate-45  translate-y-0.5' : ''
@@ -45,7 +44,7 @@ function About({ showAbout, setShowAbout }) {
           showAbout ? 'w-full' : 'w-0'
         }`}
       >
-        <div className='flex flex-col p-6 m-3 space-y-10 bg-white shadow-2xl md:flex-row md:space-y-0 md:space-x-10 md:m-0 md:p-16'>
+        <div className='flex flex-col items-center p-6 m-3 space-y-10 bg-white shadow-2xl md:flex-row md:space-y-0 md:space-x-10 md:m-0 md:p-16'>
           {/* <!-- Label & Title Container --> */}
           <div className='flex flex-col mb-4 space-y-3 text-center md:text-left'>
             {/* <!-- Title --> */}
@@ -62,8 +61,8 @@ function About({ showAbout, setShowAbout }) {
             <p className='text-sm max-w-sm font-light'>
               You can see more here:
             </p>
-            {/* <!-- Bottom Buttons Container --> */}
-            <div className='flex flex-col  space-y-4 md:space-y-0 md:space-x-4 md:flex-row'>
+            {/* LINKS CONTAINER */}
+            <div className='flex flex-col space-y-4 md:space-y-0 md:space-x-4 md:flex-row'>
               <a
                 href={BEHANCE_URL}
                 className='flex items-center justify-center py-3 px-5 space-x-3 border-2 border-gray-300 shadow-sm  hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150'
@@ -82,8 +81,8 @@ function About({ showAbout, setShowAbout }) {
             </div>
           </div>
 
-          <div>
-            <img src={headphoneImage} alt='' className='mx-auto  w-60 ' />
+          <div className='w-32 md:w-60'>
+            <img src={facePhoto} alt='' className='rounded-full' />
           </div>
         </div>
       </div>
