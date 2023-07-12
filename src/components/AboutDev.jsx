@@ -15,9 +15,11 @@ function About({ showAbout, setShowAbout }) {
     <>
       <button
         onClick={setShowAbout}
-        className='z-30 fixed top-0 right-0 flex text-2xl px-2 items-center justify-between text-white border-white border-2 bg-sky-500 w-32 h-auto lg:top-12 lg:right-12 lg:text-3xl lg:w-40 hover:bg-sky-700 transition-colors'
+        className='z-30  fixed top-0 right-0 flex text-2xl px-2 items-center justify-between text-white border-white border-2 bg-sky-500 w-32 h-auto lg:top-12 lg:right-12 lg:text-3xl lg:w-40 hover:bg-sky-700 transition-colors'
       >
-        <div className='pb-0.5'>{showAbout ? 'CLOSE' : 'ABOUT'}</div>
+        <p className='font-light pb-0.5 lg:pb-1'>
+          {showAbout ? 'CLOSE' : 'ABOUT'}
+        </p>
         {/* <FaXmark />
         <FaBars /> */}
         {showAbout ? <FaXmark /> : <FaBars />}
@@ -51,7 +53,7 @@ function About({ showAbout, setShowAbout }) {
             <p>&#x1F44B; hello, i am Zbigniew</p>
             <h1 className='max-w-sm text-2xl font-medium pb-5 lg:text-3xl'>
               I work as <span className='text-red-500'> frontend </span> dev and{' '}
-              <span className='text-red-500'>3D </span>technical generalist.
+              <span className='text-red-500 '>3D </span>technical generalist.
             </h1>
             <p className='text-sm max-w-sm font-light lg:text-m'>
               This site is my R&D project, where i tried to explore connection
