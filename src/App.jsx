@@ -3,6 +3,7 @@ import { useState, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import Experience from './components/Experience';
 import AnimTrigger from './components/AnimTrigger';
+import Titles from './components/Titles';
 import About from './components/AboutDev';
 import { OrbitControls } from '@react-three/drei';
 
@@ -67,7 +68,7 @@ function App() {
         <Experience progress={progress} />
       </Canvas>
       <About showAbout={showAbout} setShowAbout={handleSetShowAbout} />
-
+      <Titles progress={progress} />
       <AnimTrigger progress={progress} changeProgress={handleChangeProgress} />
 
       <button
