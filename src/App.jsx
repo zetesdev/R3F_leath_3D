@@ -55,7 +55,8 @@ function App() {
   };
 
   const debugLog = () => {
-    console.log(touchValueY.current);
+    // console.log(touchValueY.current);
+    console.log('TEST!');
   };
 
   return (
@@ -68,7 +69,7 @@ function App() {
         <Experience progress={progress} />
       </Canvas>
       <About showAbout={showAbout} setShowAbout={handleSetShowAbout} />
-      <Titles progress={progress} />
+      <Titles progress={progress} onMouseEnter={debugLog} />
       <AnimTrigger progress={progress} changeProgress={handleChangeProgress} />
 
       <button
