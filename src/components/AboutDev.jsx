@@ -1,8 +1,6 @@
 import facePhoto from '../assets/images/cropped_02_web_01.png';
 import { FaBehance, FaLinkedin, FaBars, FaXmark } from 'react-icons/fa6';
 
-//https://cdn.cmsfly.com/635bcad9b8a74e0091632998/muazzim-portfolio-1sl3Ip.webp  //reference link
-
 function About({ showAbout, setShowAbout }) {
   const debug = () => {
     console.log('CLICKED');
