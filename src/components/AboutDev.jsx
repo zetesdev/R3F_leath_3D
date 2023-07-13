@@ -8,8 +8,8 @@ function About({ showAbout, setShowAbout }) {
     console.log('CLICKED');
   };
 
-  const BEHANCE_URL = 'https://www.behance.net';
-  const LINKEDIN_URL = 'https://www.linkedin.com/';
+  const BEHANCE_URL = 'https://www.behance.net/zbigniewsulkowski';
+  const LINKEDIN_URL = 'https://linkedin.com/in/zbigniew-sułkowski-293070191';
 
   return (
     <>
