@@ -6,6 +6,12 @@ export default {
       fontFamily: {
         sans: ['Lato, sans-serif'],
       },
+      pointerEvents: {
+        none: 'none',
+      },
+      touchEvents: {
+        none: 'none',
+      },
     },
   },
   plugins: [],

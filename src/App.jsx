@@ -62,6 +62,7 @@ function App() {
   return (
     <>
       <Canvas
+        className='z-5'
         onWheel={handleChangeProgress}
         onTouchMove={handleChangeProgress}
         onTouchEnd={handleChangeProgress}

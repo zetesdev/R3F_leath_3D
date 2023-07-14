@@ -1,5 +1,12 @@
 import facePhoto from '../assets/images/cropped_02_web_01.png';
-import { FaBehance, FaLinkedin, FaBars, FaXmark } from 'react-icons/fa6';
+import {
+  FaBehance,
+  FaLinkedin,
+  FaBars,
+  FaXmark,
+  FaInfo,
+  FaRegUser,
+} from 'react-icons/fa6';
 
 function About({ showAbout, setShowAbout }) {
   const debug = () => {
@@ -20,7 +27,11 @@ function About({ showAbout, setShowAbout }) {
         </p>
         {/* <FaXmark />
         <FaBars /> */}
-        {showAbout ? <FaXmark /> : <FaBars />}
+        {showAbout ? (
+          <FaXmark />
+        ) : (
+          <FaRegUser className='text-xl lg:text-2xl' />
+        )}
         {/* <div
           className={`bg-white h-0.5 rounded-lg w-full transition-all ${
             showAbout ? 'rotate-45  translate-y-0.5' : ''

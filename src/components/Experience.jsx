@@ -75,7 +75,7 @@ function Experience({ progress }) {
         enableRotate={true}
         enablePan={true}
       /> */}
-      <Environment background files='studio_small_08_1k.hdr' />
+      <Environment background={false} files='studio_small_08_1k.hdr' />
       {/* <motion.mesh
         animate={{
           scale: positions[progress],
