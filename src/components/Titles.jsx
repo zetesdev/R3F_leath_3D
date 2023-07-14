@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 function Titles({ progress, onMouseEnter }) {
   const titles = [
-    { title: 'TITLE_01', subtitle: 'subtitle01' },
+    { title: 'TEKST_JEDEN', subtitle: 'subtitle01' },
     { title: 'TITLE_02 dlugi dlugi', subtitle: 'subtitle02' },
     { title: 'TITLE_03', subtitle: 'subtitle03' },
   ];
@@ -21,7 +21,6 @@ function Titles({ progress, onMouseEnter }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className='text-5xl'
           onClick={onMouseEnter}
         >
           <div
@@ -31,7 +30,7 @@ function Titles({ progress, onMouseEnter }) {
               initial={{ x: -300 }}
               animate={{ x: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className='text-5xl'
+              className='text-8xl'
             >
               {titles[progress].title}
             </motion.h1>
