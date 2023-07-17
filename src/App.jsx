@@ -18,6 +18,7 @@ function App() {
   ///HANDLE PROGRESS
   const touchValueY = useRef(0);
   const touchMoveDown = useRef(null);
+  const multiTouchEnd = useRef(false);
 
   const decrementProgress = () => {
     setProgress((prevProgress) =>
@@ -35,18 +36,20 @@ function App() {
     switch (e.type) {
       case 'wheel':
         e.deltaY > 0 ? incrementProgress() : decrementProgress();
-        // console.log('Mouse:', e.deltaY);
         break;
 
       case 'touchmove':
         touchMoveDown.current = e.touches[0].clientY >= touchValueY.current;
         touchValueY.current = e.touches[0].clientY;
-        // console.log('tochMoveDown', touchMoveDown.current);
+        multiTouchEnd.current = true;
         break;
 
       case 'touchend':
-        touchMoveDown.current ? incrementProgress() : decrementProgress();
-        console.log('FINAL:', touchValueY.current);
+        if (multiTouchEnd.current) {
+          touchMoveDown.current ? incrementProgress() : decrementProgress();
+        }
+        multiTouchEnd.current = false;
+
         break;
 
       default:
