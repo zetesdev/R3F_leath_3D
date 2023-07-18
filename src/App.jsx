@@ -19,6 +19,8 @@ function App() {
   const touchValueY = useRef(0);
   const touchMoveDown = useRef(null);
   const multiTouchEnd = useRef(false);
+  const lastWheelEventTime = useRef(0);
+  const timeThreshold = 500;
 
   const decrementProgress = () => {
     setProgress((prevProgress) =>
@@ -33,9 +35,18 @@ function App() {
   };
 
   const handleChangeProgress = (e) => {
+    const currentTime = Date.now();
     switch (e.type) {
       case 'wheel':
+        if (currentTime - lastWheelEventTime.current <= timeThreshold) {
+          // checking many events in short period of time
+          console.log(currentTime);
+          return;
+        }
+        lastWheelEventTime.current = currentTime;
+
         e.deltaY > 0 ? incrementProgress() : decrementProgress();
+        // console.log('wheel');
         break;
 
       case 'touchmove':
@@ -46,10 +57,10 @@ function App() {
 
       case 'touchend':
         if (multiTouchEnd.current) {
+          //TEST IF it is single touch or on the end of moving on screen
           touchMoveDown.current ? incrementProgress() : decrementProgress();
         }
         multiTouchEnd.current = false;
-
         break;
 
       default:
