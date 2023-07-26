@@ -47,7 +47,7 @@ export function Model(props) {
     cover_01_normalMap: 'textures/T_cover_Normal.png',
     metalBody_01_baseColor: 'textures/T_metalBody_01_BaseColor.png',
     metalBody_01_normalMap: 'textures/T_metalBody_01_Normal.png',
-    metalBody_02_normalMap: 'textures/T_metalBody_02_Normal.png',
+    metalBody_02_normalMap: 'textures/T_MetalBody_02_Normal.png',
     peseta_normalMap: 'textures/T_peseta_Normal.png',
     pliers_normalMap: 'textures/T_pliers_Normal.png',
     scissors_normalMap: 'textures/T_scissors_Normal.png',
