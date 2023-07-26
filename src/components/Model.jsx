@@ -1,4 +1,4 @@
-import { useGLTF } from '@react-three/drei';
+import { useGLTF, useTexture } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
 // export function Model(props) {
@@ -42,6 +42,33 @@ import { motion } from 'framer-motion-3d';
 
 export function Model(props) {
   const { nodes } = useGLTF('/models/tool_01.glb');
+
+  const textures = useTexture({
+    cover_01_normalMap: 'textures/T_cover_Normal.png',
+    metalBody_01_baseColor: 'textures/T_metalBody_01_BaseColor.png',
+    metalBody_01_normalMap: 'textures/T_metalBody_01_Normal.png',
+    metalBody_02_normalMap: 'textures/T_metalBody_02_Normal.png',
+    peseta_normalMap: 'textures/T_peseta_Normal.png',
+    pliers_normalMap: 'textures/T_pliers_Normal.png',
+    scissors_normalMap: 'textures/T_scissors_Normal.png',
+  });
+  console.log(nodes.SM_cover_01.material);
+
+  nodes.SM_cover_01.material.normalMap = textures.cover_01_normalMap;
+  nodes.SM_cover_01.material.normalMap.flipY = false;
+
+  nodes.SM_body_01.material.map = textures.metalBody_01_baseColor;
+  nodes.SM_body_01.material.map.flipY = false;
+  nodes.SM_body_01.material.normalMap = textures.metalBody_01_normalMap;
+  nodes.SM_body_01.material.normalMap.flipY = false;
+  nodes.SM_bodyTop_003.material.normalMap = textures.metalBody_02_normalMap;
+  nodes.SM_bodyTop_003.material.normalMap.flipY = false;
+  nodes.SM_screwdriver_01.material.normalMap = textures.peseta_normalMap;
+  nodes.SM_screwdriver_01.material.normalMap.flipY = false;
+  nodes.SM_pliers_01.material.normalMap = textures.pliers_normalMap;
+  nodes.SM_pliers_01.material.normalMap.flipY = false;
+  nodes.SM_scissors_01.material.normalMap = textures.scissors_normalMap;
+  nodes.SM_scissors_01.material.normalMap.flipY = false;
 
   return (
     <group {...props} dispose={null}>
