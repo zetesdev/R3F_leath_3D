@@ -30,7 +30,7 @@ function App() {
   //CAMERA ANIMATION MAXIMUM STEPS HERE
   const incrementProgress = () => {
     setProgress((prevProgress) =>
-      prevProgress === 2 ? prevProgress : prevProgress + 1
+      prevProgress === 3 ? prevProgress : prevProgress + 1
     );
   };
 
@@ -40,7 +40,7 @@ function App() {
       case 'wheel':
         if (currentTime - lastWheelEventTime.current <= timeThreshold) {
           // checking many events in short period of time
-          console.log(currentTime);
+          // console.log(currentTime);
           return;
         }
         lastWheelEventTime.current = currentTime;

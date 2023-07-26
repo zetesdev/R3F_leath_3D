@@ -5,12 +5,15 @@ function Titles({ progress }) {
     { title: 'TEKST_JEDEN', subtitle: 'subtitle01' },
     { title: 'TITLE_02 dlugi', subtitle: 'subtitle02' },
     { title: 'TITLE_03', subtitle: 'subtitle03' },
+    { title: 'TEKST_04', subtitle: 'subtitle04' },
   ];
 
   const offsets = [
     { x: 'translate-x-64', y: 'translate-y-64' },
     { x: 'translate-x-32', y: 'translate-y-32' },
     { x: '-translate-x-32', y: '-translate-y-32' },
+
+    { x: 'translate-x-32', y: 'translate-y-32' },
   ];
 
   return (
