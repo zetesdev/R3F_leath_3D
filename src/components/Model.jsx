@@ -41,8 +41,12 @@ import { motion } from 'framer-motion-3d';
 // useGLTF.preload('/models/SM_test_01.gltf');
 
 export function Model(props) {
+  const { progress } = props;
   const { nodes } = useGLTF('/models/tool_01.glb');
 
+  console.log('Progress:', progress);
+
+  //TEXTURE SETUP
   const textures = useTexture({
     cover_01_normalMap: 'textures/T_cover_Normal.png',
     metalBody_01_baseColor: 'textures/T_metalBody_01_BaseColor.png',
@@ -52,7 +56,6 @@ export function Model(props) {
     pliers_normalMap: 'textures/T_pliers_Normal.png',
     scissors_normalMap: 'textures/T_scissors_Normal.png',
   });
-  console.log(nodes.SM_cover_01.material);
 
   nodes.SM_cover_01.material.normalMap = textures.cover_01_normalMap;
   nodes.SM_cover_01.material.normalMap.flipY = false;
@@ -69,6 +72,12 @@ export function Model(props) {
   nodes.SM_pliers_01.material.normalMap.flipY = false;
   nodes.SM_scissors_01.material.normalMap = textures.scissors_normalMap;
   nodes.SM_scissors_01.material.normalMap.flipY = false;
+  //TEXTURE SETUP END
+
+  //ANIMATIONS
+
+  const customRotation = [0, 0, 0];
+  progress === 1 ? (customRotation[2] = 2.5) : (customRotation[2] = 0);
 
   return (
     <group {...props} dispose={null}>
@@ -173,12 +182,20 @@ export function Model(props) {
           material={nodes.SM_bodyTop_001.material}
           position={[-0.164, 0.05, 0]}
         />
-        <mesh
+        <motion.mesh
           castShadow
           receiveShadow
           geometry={nodes.SM_cover_01.geometry}
           material={nodes.SM_cover_01.material}
           position={[-0.164, 0.051, 0.053]}
+          animate={{
+            rotateZ: customRotation[2],
+          }}
+          transition={{
+            delay: 0.5,
+            duration: 1,
+            ease: 'easeInOut',
+          }}
         >
           <mesh
             castShadow
@@ -201,7 +218,7 @@ export function Model(props) {
             material={nodes.SM_screwdriver_01.material}
             position={[0, -0.001, -0.053]}
           />
-        </mesh>
+        </motion.mesh>
         <mesh
           castShadow
           receiveShadow

@@ -84,7 +84,7 @@ function App() {
         <Experience progress={progress} />
       </Canvas>
       <About showAbout={showAbout} setShowAbout={handleSetShowAbout} />
-      <Titles progress={progress} onMouseEnter={debugLog} />
+      {/* <Titles progress={progress} onMouseEnter={debugLog} />  */}
       <AnimTrigger progress={progress} changeProgress={handleChangeProgress} />
 
       <button

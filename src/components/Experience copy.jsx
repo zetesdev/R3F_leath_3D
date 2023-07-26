@@ -11,19 +11,19 @@ import { motion } from 'framer-motion-3d';
 function Experience({ progress }) {
   const cameraRef = useRef();
 
-  // const camPositions = [
-  //   [-0.48, 0.66, 0.84],
-  //   [0.44, 0.26, 0.29],
-  //   [0.2, -0.58, -0.28],
-  //   [0.2, 0.1, 0.1],
-  // ];
+  const camPositions = [
+    [-0.48, 0.66, 0.84],
+    [0.44, 0.26, 0.29],
+    [0.2, -0.58, -0.28],
+    [0.2, 0.1, 0.1],
+  ];
 
-  // const camRotations = [
-  //   [-0.67, -0.42, -0.31],
-  //   [-0.73, 0.84, 0.59],
-  //   [2.029, 0.3, -2.59],
-  //   [-0.64, 0.74, 0.49],
-  // ];
+  const camRotations = [
+    [-0.67, -0.42, -0.31],
+    [-0.73, 0.84, 0.59],
+    [2.029, 0.3, -2.59],
+    [-0.64, 0.74, 0.49],
+  ];
 
   //CAMERA READER
   // useFrame(() => {
@@ -44,17 +44,31 @@ function Experience({ progress }) {
   //   }
   // });
 
-  // const [camPositionX, camPositionY, camPositionZ] = camPositions[progress];
-  // const [camRotateX, camRotateY, camRotateZ] = camRotations[progress];
+  const [camPositionX, camPositionY, camPositionZ] = camPositions[progress];
+  const [camRotateX, camRotateY, camRotateZ] = camRotations[progress];
 
   return (
     <>
-      <PerspectiveCamera
-        ref={cameraRef}
-        makeDefault
-        position={[-0.48, 0.66, 0.84]}
-        rotation={[-0.67, -0.42, -0.31]}
-      />
+      <motion.group
+        name='cameraParent'
+        position={camPositions[0]}
+        rotation={camRotations[0]}
+        animate={{
+          x: camPositionX,
+          y: camPositionY,
+          z: camPositionZ,
+
+          rotateX: camRotateX,
+          rotateY: camRotateY,
+          rotateZ: camRotateZ,
+        }}
+        transition={{
+          duration: 1,
+          ease: 'easeInOut',
+        }}
+      >
+        <PerspectiveCamera ref={cameraRef} makeDefault />
+      </motion.group>
 
       {/* <OrbitControls
         camera={cameraRef.current}
