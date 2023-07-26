@@ -87,7 +87,7 @@ function Experience({ progress }) {
         <meshStandardMaterial color={'red'} />
       </motion.mesh> */}
 
-      <Model scale={10} progress={progress} />
+      <Model progress={progress} />
     </>
   );
 }
