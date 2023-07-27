@@ -68,23 +68,17 @@ function App() {
     }
   };
 
-  const debugLog = () => {
-    // console.log(touchValueY.current);
-    console.log('TEST!');
-  };
-
   return (
     <>
       <Canvas
-        className='z-5'
-        // onWheel={handleChangeProgress}
-        // onTouchMove={handleChangeProgress}
-        // onTouchEnd={handleChangeProgress}
+        onWheel={handleChangeProgress}
+        onTouchMove={handleChangeProgress}
+        onTouchEnd={handleChangeProgress}
       >
         <Experience progress={progress} />
       </Canvas>
       <About showAbout={showAbout} setShowAbout={handleSetShowAbout} />
-      <Titles progress={progress} onMouseEnter={debugLog} />
+      <Titles progress={progress} />
 
       <AnimTrigger progress={progress} changeProgress={incrementProgress} />
       <button

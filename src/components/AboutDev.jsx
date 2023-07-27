@@ -40,7 +40,7 @@ function About({ showAbout, setShowAbout }) {
             </h1>
             <p className='text-sm max-w-sm font-light lg:text-m'>
               This site is my R&D project, where i tried to explore connection
-              between modern web development stack and 3D art world.
+              between modern web development and 3D world.
             </p>
 
             <p className='text-sm max-w-sm font-light'>

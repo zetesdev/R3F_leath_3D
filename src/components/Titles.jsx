@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 function Titles({ progress }) {
   const titles = [
     { title: '', subtitle: '' },
-    { title: 'PLIERS', subtitle: 'better than your fingers' },
+    { title: 'PLIERS', subtitle: 'better than fingers' },
     { title: '', subtitle: '' },
-    { title: 'SCREWDRIVER', subtitle: 'you can fix it, you can break it' },
+    { title: 'SCREWDRIVER', subtitle: 'fixing, breaking, everything' },
     { title: '', subtitle: '' },
     { title: 'SCISSORS', subtitle: 'do you have plasters?' },
   ];
