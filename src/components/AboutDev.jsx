@@ -1,12 +1,5 @@
 import facePhoto from '../assets/images/cropped_02_web_01.png';
-import {
-  FaBehance,
-  FaLinkedin,
-  FaBars,
-  FaXmark,
-  FaInfo,
-  FaRegUser,
-} from 'react-icons/fa6';
+import { FaBehance, FaLinkedin, FaXmark, FaRegUser } from 'react-icons/fa6';
 
 function About({ showAbout, setShowAbout }) {
   const debug = () => {
@@ -20,45 +13,26 @@ function About({ showAbout, setShowAbout }) {
     <>
       <button
         onClick={setShowAbout}
-        className='z-50  fixed top-0 right-0 flex text-2xl px-2 items-center justify-between text-white border-white border-2  w-32 h-auto lg:top-12 lg:right-12 lg:text-3xl lg:w-40  hover:bg-stone-500 transition-colors lg:overflow-hidden'
+        className='z-50  fixed top-0 right-0 flex text-2xl px-2 items-center justify-between text-white border-white border-2  w-32 h-auto lg:top-12 lg:right-12 lg:text-3xl lg:w-40  hover:bg-gray-500 transition-colors lg:overflow-hidden'
       >
         <p className='font-light pb-0.5 lg:pb-1'>
           {showAbout ? 'CLOSE' : 'ABOUT'}
         </p>
-        {/* <FaXmark />
-        <FaBars /> */}
+
         {showAbout ? (
           <FaXmark />
         ) : (
           <FaRegUser className='text-xl lg:text-2xl' />
         )}
-        {/* <div
-          className={`bg-white h-0.5 rounded-lg w-full transition-all ${
-            showAbout ? 'rotate-45  translate-y-0.5' : ''
-          }`}
-        />
-        <div
-          className={`bg-white h-0.5 rounded-lg w-full my-1 ${
-            showAbout ? 'hidden' : ''
-          }`}
-        />
-        <div
-          className={`bg-white h-0.5 rounded-lg w-full transition-all ${
-            showAbout ? '-rotate-45' : ''
-          }`}
-        /> */}
       </button>
 
-      {/* <!-- Global  */}
       <div
         className={`z-40 fixed top-0 left-0 flex overflow-hidden items-center justify-center min-h-screen bg-gray-600 bg-opacity-50 ${
           showAbout ? 'w-full' : 'w-0'
         }`}
       >
         <div className='flex flex-col items-center p-6 m-3 space-y-10  bg-white shadow-2xl lg:flex-row lg:space-y-0 lg:space-x-10 lg:m-0 lg:p-16'>
-          {/* <!-- Label & Title Container --> */}
           <div className='flex flex-col mb-4 space-y-3 text-center lg:text-md lg:text-left'>
-            {/* <!-- Title --> */}
             <p>&#x1F44B; hello, i am Zbigniew</p>
             <h1 className='max-w-sm text-2xl font-medium pb-5 lg:text-3xl'>
               I work as <span className='text-red-500'> frontend </span> dev and{' '}

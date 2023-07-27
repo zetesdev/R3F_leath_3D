@@ -77,18 +77,18 @@ function App() {
     <>
       <Canvas
         className='z-5'
-        onWheel={handleChangeProgress}
-        onTouchMove={handleChangeProgress}
-        onTouchEnd={handleChangeProgress}
+        // onWheel={handleChangeProgress}
+        // onTouchMove={handleChangeProgress}
+        // onTouchEnd={handleChangeProgress}
       >
         <Experience progress={progress} />
       </Canvas>
       <About showAbout={showAbout} setShowAbout={handleSetShowAbout} />
-      {/* <Titles progress={progress} onMouseEnter={debugLog} />  */}
-      <AnimTrigger progress={progress} changeProgress={handleChangeProgress} />
+      <Titles progress={progress} onMouseEnter={debugLog} />
 
+      <AnimTrigger progress={progress} changeProgress={incrementProgress} />
       <button
-        onClick={debugLog}
+        onClick={decrementProgress}
         className='z-23 fixed bottom-10 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-red-500 w-auto h-11 rounded-md'
       >
         DEBUG

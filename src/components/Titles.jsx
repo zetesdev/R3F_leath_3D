@@ -2,18 +2,21 @@ import { motion } from 'framer-motion';
 
 function Titles({ progress }) {
   const titles = [
-    { title: 'TEKST_JEDEN', subtitle: 'subtitle01' },
-    { title: 'TITLE_02 dlugi', subtitle: 'subtitle02' },
-    { title: 'TITLE_03', subtitle: 'subtitle03' },
-    { title: 'TEKST_04', subtitle: 'subtitle04' },
+    { title: '', subtitle: '' },
+    { title: 'PLIERS', subtitle: 'better than your fingers' },
+    { title: '', subtitle: '' },
+    { title: 'SCREWDRIVER', subtitle: 'you can fix it, you can break it' },
+    { title: '', subtitle: '' },
+    { title: 'SCISSORS', subtitle: 'do you have plasters?' },
   ];
 
   const offsets = [
-    { x: 'translate-x-64', y: 'translate-y-64' },
-    { x: 'translate-x-32', y: 'translate-y-32' },
-    { x: '-translate-x-32', y: '-translate-y-32' },
-
-    { x: 'translate-x-32', y: 'translate-y-32' },
+    { x: '', y: '' },
+    { x: 'translate-x-64', y: 'translate-y-48' },
+    { x: '', y: '' },
+    { x: 'translate-x-32', y: '-translate-y-64' },
+    { x: '', y: '' },
+    { x: 'translate-x-64', y: 'translate-y-48' },
   ];
 
   return (
@@ -23,7 +26,7 @@ function Titles({ progress }) {
           key={progress}
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1, 1, 0.9, 0] }}
-          transition={{ duration: 4, delay: 0.3 }}
+          transition={{ duration: 5, delay: 0.7 }}
         >
           <div
             className={`${offsets[progress].x} ${offsets[progress].y} px-3 font-light bg-slate-100 overflow-hidden`}
