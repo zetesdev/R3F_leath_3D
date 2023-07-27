@@ -27,10 +27,10 @@ function App() {
       prevProgress === 0 ? prevProgress : prevProgress - 1
     );
   };
-  //CAMERA ANIMATION MAXIMUM STEPS HERE
+  //MAXIMUM PROGRESS STEPS HERE
   const incrementProgress = () => {
     setProgress((prevProgress) =>
-      prevProgress === 3 ? prevProgress : prevProgress + 1
+      prevProgress === 5 ? prevProgress : prevProgress + 1
     );
   };
 
