@@ -13,7 +13,7 @@ function About({ showAbout, setShowAbout }) {
     <>
       <button
         onClick={setShowAbout}
-        className='z-50  fixed top-0 right-0 flex text-2xl px-2 items-center justify-between text-white border-white border-2  w-32 h-auto lg:top-12 lg:right-12 lg:text-3xl lg:w-40  hover:bg-gray-500 transition-colors lg:overflow-hidden'
+        className='z-50 fixed top-0 right-0 flex text-2xl px-2 items-center justify-between text-white border-white border-2  w-32 h-auto lg:top-12 lg:right-12 lg:text-3xl lg:w-40  hover:bg-gray-500 transition-colors lg:overflow-hidden'
       >
         <p className='font-light pb-0.5 lg:pb-1'>
           {showAbout ? 'CLOSE' : 'ABOUT'}

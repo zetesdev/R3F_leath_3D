@@ -5,6 +5,7 @@ import Experience from './components/Experience';
 import AnimTrigger from './components/AnimTrigger';
 import Titles from './components/Titles';
 import About from './components/AboutDev';
+import ColorChanger from './components/ColorChanger';
 import { OrbitControls } from '@react-three/drei';
 
 function App() {
@@ -80,13 +81,19 @@ function App() {
       <About showAbout={showAbout} setShowAbout={handleSetShowAbout} />
       <Titles progress={progress} />
 
-      <AnimTrigger progress={progress} changeProgress={incrementProgress} />
+      <ColorChanger
+        colors={['lime', 'sky', 'red', 'slate', 'fuchsia']}
+        // colors={['red', 'red', 'red', 'red', 'red']}
+        progress={progress}
+      />
+
+      {/* <AnimTrigger progress={progress} changeProgress={incrementProgress} />
       <button
         onClick={decrementProgress}
         className='z-23 fixed bottom-10 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-red-500 w-auto h-11 rounded-md'
       >
         DEBUG
-      </button>
+      </button> */}
     </>
   );
 }
