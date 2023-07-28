@@ -4,6 +4,7 @@ import {
   Environment,
   PerspectiveCamera,
   OrbitControls,
+  Sparkles,
 } from '@react-three/drei';
 import { Model } from './Model';
 import { motion } from 'framer-motion-3d';
@@ -88,6 +89,16 @@ function Experience({ progress }) {
         enablePan={true}
       /> */}
       <Environment background={false} files='studio_small_08_1k.hdr' />
+
+      <Sparkles
+        count={300}
+        scale={1}
+        size={0.25}
+        speed={0.05}
+        opacity={1}
+        // color={'rgb(100%, 0%, 0%)'}
+      ></Sparkles>
+
       <Model progress={progress} />
     </>
   );

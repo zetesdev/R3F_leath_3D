@@ -5,7 +5,7 @@ function Titles({ progress }) {
     { title: '', subtitle: '' },
     { title: 'PLIERS', subtitle: 'better than fingers' },
     { title: '', subtitle: '' },
-    { title: 'SCREWDRIVER', subtitle: 'fixing, breaking, everything' },
+    { title: 'SCREWDRIVER', subtitle: 'fix, break, fix again' },
     { title: '', subtitle: '' },
     { title: 'SCISSORS', subtitle: 'do you have plasters?' },
   ];
