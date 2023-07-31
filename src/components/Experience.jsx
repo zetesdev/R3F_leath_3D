@@ -96,7 +96,7 @@ function Experience({ progress, coverColor }) {
         size={0.25}
         speed={0.05}
         opacity={1}
-        color={'rgb(85%, 0%, 0%)'}
+        color={'#a3e635'}
       ></Sparkles>
       <Sparkles
         count={100}

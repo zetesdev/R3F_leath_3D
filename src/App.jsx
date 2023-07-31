@@ -11,7 +11,12 @@ import { OrbitControls } from '@react-three/drei';
 function App() {
   const [progress, setProgress] = useState(0);
   const [showAbout, setShowAbout] = useState(false);
-  const [coverColor, setCoverColor] = useState('bg-color');
+  const [coverColor, setCoverColor] = useState('0x27272a');
+
+  const handleSetCoverColor = (arg) => {
+    setCoverColor(arg);
+    console.log('clicked', arg);
+  };
 
   const handleSetShowAbout = () => {
     setShowAbout((prevShowAbout) => !prevShowAbout);
@@ -82,7 +87,7 @@ function App() {
       <About showAbout={showAbout} setShowAbout={handleSetShowAbout} />
       <Titles progress={progress} />
 
-      <ColorChanger progress={progress} />
+      <ColorChanger progress={progress} setCoverColor={handleSetCoverColor} />
 
       {/* <AnimTrigger progress={progress} changeProgress={incrementProgress} />
       <button

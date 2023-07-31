@@ -7,7 +7,8 @@ export function Model(props) {
 
   // // console.log('Progress:', progress);
   // console.log(nodes.SM_cover_01.material.color);
-  nodes.SM_cover_01.material.color.setHex(0xff0000);
+
+  nodes.SM_cover_01.material.color.setHex(coverColor);
   //TEXTURE SETUP
   const textures = useTexture({
     cover_01_normalMap: 'textures/T_cover_Normal.png',
