@@ -2,11 +2,12 @@ import { useGLTF, useTexture, Float } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
 export function Model(props) {
-  const { progress } = props;
+  const { progress, coverColor } = props;
   const { nodes } = useGLTF('/models/tool_01.glb');
 
-  console.log('Progress:', progress);
-
+  // // console.log('Progress:', progress);
+  // console.log(nodes.SM_cover_01.material.color);
+  nodes.SM_cover_01.material.color.setHex(0xff0000);
   //TEXTURE SETUP
   const textures = useTexture({
     cover_01_normalMap: 'textures/T_cover_Normal.png',

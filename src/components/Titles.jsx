@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 function Titles({ progress }) {
   const titles = [
     { title: '', subtitle: '' },
-    { title: 'PLIERS', subtitle: 'better than fingers' },
+    { title: 'PLIERS', subtitle: 'more than fingers' },
     { title: '', subtitle: '' },
     { title: 'SCREWDRIVER', subtitle: 'fix, break, fix again' },
     { title: '', subtitle: '' },
@@ -35,7 +35,7 @@ function Titles({ progress }) {
               initial={{ x: -700 }}
               animate={{ x: 0 }}
               transition={{ delay: 0.6, duration: 0.7 }}
-              className='text-8xl'
+              className='text-5xl text-start pr-12'
             >
               {titles[progress].title}
             </motion.h1>

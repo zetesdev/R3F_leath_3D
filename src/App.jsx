@@ -11,6 +11,7 @@ import { OrbitControls } from '@react-three/drei';
 function App() {
   const [progress, setProgress] = useState(0);
   const [showAbout, setShowAbout] = useState(false);
+  const [coverColor, setCoverColor] = useState('bg-color');
 
   const handleSetShowAbout = () => {
     setShowAbout((prevShowAbout) => !prevShowAbout);
@@ -76,16 +77,12 @@ function App() {
         onTouchMove={handleChangeProgress}
         onTouchEnd={handleChangeProgress}
       >
-        <Experience progress={progress} />
+        <Experience progress={progress} coverColor={coverColor} />
       </Canvas>
       <About showAbout={showAbout} setShowAbout={handleSetShowAbout} />
       <Titles progress={progress} />
 
-      <ColorChanger
-        colors={['lime', 'sky', 'red', 'slate', 'fuchsia']}
-        // colors={['red', 'red', 'red', 'red', 'red']}
-        progress={progress}
-      />
+      <ColorChanger progress={progress} />
 
       {/* <AnimTrigger progress={progress} changeProgress={incrementProgress} />
       <button

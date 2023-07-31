@@ -9,7 +9,7 @@ import {
 import { Model } from './Model';
 import { motion } from 'framer-motion-3d';
 
-function Experience({ progress }) {
+function Experience({ progress, coverColor }) {
   const cameraRef = useRef();
 
   const camPositions = [
@@ -115,7 +115,7 @@ function Experience({ progress }) {
         opacity={1}
         color={'rgb(85%, 50%, 0%)'}
       ></Sparkles>
-      <Model progress={progress} />
+      <Model progress={progress} coverColor={coverColor} />
     </>
   );
 }
