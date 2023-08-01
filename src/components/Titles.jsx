@@ -12,16 +12,16 @@ function Titles({ progress }) {
 
   const offsets = [
     { x: '', y: '' },
-    { x: 'translate-x-64', y: 'translate-y-48' },
+    { x: 'lg:translate-x-64', y: 'lg:translate-y-48' },
     { x: '', y: '' },
-    { x: 'translate-x-32', y: '-translate-y-64' },
+    { x: 'lg:translate-x-32', y: 'lg:-translate-y-64' },
     { x: '', y: '' },
-    { x: 'translate-x-64', y: 'translate-y-48' },
+    { x: 'lg:translate-x-64', y: 'lg:translate-y-48' },
   ];
 
   return (
     <>
-      <div className='fixed z-1 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 pointer-events-none touch-events-none'>
+      <div className='fixed z-1 top-10 left-1/2 lg:top-1/2 left-1/2 lg:-translate-y-1/2 -translate-x-1/2 pointer-events-none touch-events-none'>
         <motion.div
           key={progress}
           initial={{ opacity: 0 }}
@@ -35,7 +35,7 @@ function Titles({ progress }) {
               initial={{ x: -700 }}
               animate={{ x: 0 }}
               transition={{ delay: 0.6, duration: 0.7 }}
-              className='text-5xl text-start pr-12'
+              className='text-3xl lg:text-5xl text-start pr-12'
             >
               {titles[progress].title}
             </motion.h1>
@@ -43,7 +43,7 @@ function Titles({ progress }) {
               initial={{ x: 700 }}
               animate={{ x: 0 }}
               transition={{ delay: 1, duration: 0.7 }}
-              className='text-xl text-end'
+              className='text-md lg:text-xl text-end'
             >
               {titles[progress].subtitle}
             </motion.h3>

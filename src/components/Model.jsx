@@ -71,7 +71,7 @@ export function Model(props) {
   }
 
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} scale={1} rotation={[0, 0, 0]}>
       <Float speed={2} floatingRange={[-0.025, 0.025]} rotationIntensity={0.7}>
         <motion.mesh
           name='myEmpty'
