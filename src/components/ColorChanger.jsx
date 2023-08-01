@@ -31,7 +31,7 @@ function Button({ color, setCoverColor }) {
   return (
     <button
       onClick={handleClick}
-      className={`${color} border-white border-2 w-10 h-10 mx-0.5 rounded-xl hover:scale-110 transition-transform pointer-events-auto touch-events-auto`}
+      className={`${color} border-white border-2 w-8 h-8 mx-0.5 rounded-lg lg:rounded-xl lg:w-10 lg:h-10 hover:scale-110 transition-transform pointer-events-auto touch-events-auto`}
     ></button>
   );
 }
@@ -55,9 +55,11 @@ function ColorChanger({
   ];
 
   return (
-    <div className='flex flex-col items-center fixed z-20 bottom-5 left-1/2 -translate-x-1/2 pointer-events-none touch-events-none'>
-      <h3 className='font-light text-sm text-white '>scroll to progress</h3>
-      <div className='flex flex-row items-center text-4xl text-white mb-3 '>
+    <div className='flex flex-col items-center fixed z-20 bottom-3 lg:bottom-5 left-1/2 -translate-x-1/2 pointer-events-none touch-events-none'>
+      <h3 className='font-light text-xs lg:text-sm text-white '>
+        scroll to progress
+      </h3>
+      <div className='flex flex-row items-center text-3xl lg:text-4xl text-white mb-2 '>
         <button
           onClick={decrementProgress}
           className={`${
