@@ -92,7 +92,12 @@ function App() {
       <About showAbout={showAbout} setShowAbout={handleSetShowAbout} />
       <Titles progress={progress} />
 
-      <ColorChanger progress={progress} setCoverColor={handleSetCoverColor} />
+      <ColorChanger
+        progress={progress}
+        setCoverColor={handleSetCoverColor}
+        decrementProgress={decrementProgress}
+        incrementProgress={incrementProgress}
+      />
 
       {/* <AnimTrigger progress={progress} changeProgress={incrementProgress} />
       <button

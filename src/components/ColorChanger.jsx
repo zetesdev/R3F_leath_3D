@@ -1,3 +1,5 @@
+import { FaAngleRight, FaAngleLeft } from 'react-icons/fa6';
+
 function Button({ color, setCoverColor }) {
   let decodedColor = '';
 
@@ -15,7 +17,7 @@ function Button({ color, setCoverColor }) {
       decodedColor = '0x27272a';
       break;
     case 'bg-orange-500':
-      decodedColor = '0xea580c';
+      decodedColor = '0xc2410c';
 
       break;
     default:
@@ -34,7 +36,15 @@ function Button({ color, setCoverColor }) {
   );
 }
 
-function ColorChanger({ progress, setCoverColor }) {
+function ColorChanger({
+  progress,
+  setCoverColor,
+  incrementProgress,
+  decrementProgress,
+}) {
+  const test = () => {
+    console.log('test');
+  };
   //WORKAROUND FOR PROBLEM WITH TAILWIND DYNAMIC COLOR CLASSES
   const colors = [
     'bg-lime-700',
@@ -46,8 +56,33 @@ function ColorChanger({ progress, setCoverColor }) {
 
   return (
     <div className='flex flex-col items-center fixed z-20 bottom-5 left-1/2 -translate-x-1/2 pointer-events-none touch-events-none'>
-      <h3 className='font-light text-sm text-white'>scroll to progress</h3>
-      <h2 className='text-4xl text-white mb-3'>{progress} / 5</h2>
+      <h3 className='font-light text-sm text-white '>scroll to progress</h3>
+      <div className='flex flex-row items-center text-4xl text-white mb-3 '>
+        <button
+          onClick={decrementProgress}
+          className={`${
+            progress === 0
+              ? 'opacity-0 pointer-events-none touch-events-none'
+              : 'pointer-events-auto touch-events-auto'
+          }`}
+        >
+          <FaAngleLeft className='hover:scale-110 transition-transform' />
+        </button>
+        <h2 className='mx-4 pointer-events-none touch-events-none '>
+          {progress} / 5
+        </h2>
+        <button
+          onClick={incrementProgress}
+          className={`${
+            progress === 5
+              ? 'opacity-0 pointer-events-none touch-events-none'
+              : 'pointer-events-auto touch-events-auto'
+          }`}
+        >
+          <FaAngleRight className='hover:scale-110 transition-transform' />
+        </button>
+      </div>
+
       <div className='flex'>
         {colors.map((color, index) => (
           <Button setCoverColor={setCoverColor} key={index} color={color} />
