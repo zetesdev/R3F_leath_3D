@@ -247,3 +247,11 @@ export function Model(props) {
 }
 
 useGLTF.preload('/models/tool_01.glb');
+useTexture.preload('/textures/T_cover_Normal.png');
+useTexture.preload('/textures/T_metalBody_01_BaseColor.png');
+useTexture.preload('/textures/T_metalBody_01_Normal.png');
+useTexture.preload('/textures/T_MetalBody_02_Normal.png');
+useTexture.preload('/textures/T_peseta_Normal.png');
+useTexture.preload('/textures/T_metalBody_01_BaseColor.png');
+useTexture.preload('/textures/T_pliers_Normal.png');
+useTexture.preload('/textures/T_scissors_Normal.png');

@@ -1,12 +1,13 @@
 import './App.css';
-import { useState, useRef } from 'react';
+import { useState, useRef, Suspense } from 'react';
+import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
+import Loader from './components/Loader';
 import Experience from './components/Experience';
 import AnimTrigger from './components/AnimTrigger';
 import Titles from './components/Titles';
 import About from './components/AboutDev';
 import ColorChanger from './components/ColorChanger';
-import { OrbitControls } from '@react-three/drei';
 
 function App() {
   const [progress, setProgress] = useState(0);
@@ -15,7 +16,6 @@ function App() {
 
   const handleSetCoverColor = (arg) => {
     setCoverColor(arg);
-    console.log('clicked', arg);
   };
 
   const handleSetShowAbout = () => {
@@ -77,13 +77,18 @@ function App() {
 
   return (
     <>
+      <Loader />
+
       <Canvas
         onWheel={handleChangeProgress}
         onTouchMove={handleChangeProgress}
         onTouchEnd={handleChangeProgress}
       >
-        <Experience progress={progress} coverColor={coverColor} />
+        <Suspense>
+          <Experience progress={progress} coverColor={coverColor} />
+        </Suspense>
       </Canvas>
+
       <About showAbout={showAbout} setShowAbout={handleSetShowAbout} />
       <Titles progress={progress} />
 

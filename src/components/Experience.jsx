@@ -115,7 +115,7 @@ function Experience({ progress, coverColor }) {
         opacity={1}
         color={'rgb(85%, 50%, 0%)'}
       ></Sparkles>
-      <Model progress={progress} coverColor={coverColor} />
+      <Model scale={0.75} progress={progress} coverColor={coverColor} />
     </>
   );
 }
