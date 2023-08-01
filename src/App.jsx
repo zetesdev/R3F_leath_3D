@@ -13,6 +13,7 @@ function App() {
   const [progress, setProgress] = useState(0);
   const [showAbout, setShowAbout] = useState(false);
   const [coverColor, setCoverColor] = useState('0x27272a');
+  const [loader, setLoader] = useState(true);
 
   const handleSetCoverColor = (arg) => {
     setCoverColor(arg);
@@ -77,8 +78,7 @@ function App() {
 
   return (
     <>
-      <Loader />
-
+      {loader && <Loader onComplete={() => setLoader(false)} />}
       <Canvas
         onWheel={handleChangeProgress}
         onTouchMove={handleChangeProgress}

@@ -1,16 +1,19 @@
 import { useProgress } from '@react-three/drei';
-import { useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
-function Loader() {
-  const { progress, total, loaded, item } = useProgress();
+function Loader({ onComplete }) {
+  const { progress } = useProgress();
 
-  //   useEffect(() => {
-  //     console.log(progress, total, loaded, item);
-  //   }, [progress, total, loaded, item]);
+  useEffect(() => {
+    if (progress === 100) {
+      setTimeout(onComplete, 700);
+    }
+  }, [progress, onComplete]);
 
   return (
-    <div className='z-50 z fixed flex items-center justify-center top-0 left-0  bg-red-500 w-full h-full text-6xl opacity-100 '>
-      <div>LOADER {progress} </div>
+    <div className='z-50 text-white fixed flex flex-col items-center justify-center top-0 left-0 bg-gray-950 w-full h-full text-6xl pointer-events-none touch-events-non opacity-100'>
+      <div className='text-xl'>loading experience: </div>
+      <div>{Math.round(progress)} %</div>
     </div>
   );
 }

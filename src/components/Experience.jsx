@@ -5,6 +5,7 @@ import {
   PerspectiveCamera,
   OrbitControls,
   Sparkles,
+  useTexture,
 } from '@react-three/drei';
 import { Model } from './Model';
 import { motion } from 'framer-motion-3d';

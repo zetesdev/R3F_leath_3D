@@ -3,7 +3,7 @@ function Button({ color, setCoverColor }) {
 
   switch (color) {
     case 'bg-lime-700':
-      decodedColor = '0x4d7c0f';
+      decodedColor = '0x365314';
       break;
     case 'bg-sky-700':
       decodedColor = '0x0369a1';

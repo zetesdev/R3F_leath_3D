@@ -2,10 +2,6 @@ import facePhoto from '../assets/images/cropped_02_web_01.png';
 import { FaBehance, FaLinkedin, FaXmark, FaRegUser } from 'react-icons/fa6';
 
 function About({ showAbout, setShowAbout }) {
-  const debug = () => {
-    console.log('CLICKED');
-  };
-
   const BEHANCE_URL = 'https://www.behance.net/zbigniewsulkowski';
   const LINKEDIN_URL = 'https://linkedin.com/in/zbigniew-sułkowski-293070191';
 
