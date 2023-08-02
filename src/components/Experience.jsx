@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import {
   Environment,
   PerspectiveCamera,
@@ -101,7 +101,7 @@ function Experience({ progress, coverColor }) {
       ></Sparkles>
       <Sparkles
         count={100}
-        scale={1}
+        scale={2}
         size={0.25}
         speed={0.05}
         opacity={1}

@@ -1,10 +1,15 @@
 import { useGLTF, useTexture, Float } from '@react-three/drei';
+import { useThree } from '@react-three/fiber';
 import { motion } from 'framer-motion-3d';
+import { useRef } from 'react';
 
 export function Model(props) {
   const { progress, coverColor } = props;
   const { nodes } = useGLTF('/models/tool_01.glb');
-
+  const { viewport } = useThree();
+  const isMobile = useRef(false);
+  isMobile.current = viewport.width < 1;
+  console.log(isMobile.current, viewport.width);
   // // console.log('Progress:', progress);
   // console.log(nodes.SM_cover_01.material.color);
 
@@ -71,7 +76,12 @@ export function Model(props) {
   }
 
   return (
-    <group {...props} dispose={null} scale={1} rotation={[0, 0, 0]}>
+    <group
+      {...props}
+      dispose={null}
+      scale={isMobile.current ? 0.55 : 0.9}
+      rotation={isMobile.current ? [0, -0.2, 1.5] : [0, 0, 0]}
+    >
       <Float speed={2} floatingRange={[-0.025, 0.025]} rotationIntensity={0.7}>
         <motion.mesh
           name='myEmpty'
