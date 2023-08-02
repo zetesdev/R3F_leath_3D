@@ -27,26 +27,26 @@ function About({ showAbout, setShowAbout }) {
           showAbout ? 'w-full' : 'w-0'
         }`}
       >
-        <div className='flex flex-col items-center p-6 m-3 space-y-10  bg-white shadow-2xl lg:flex-row lg:space-y-0 lg:space-x-10 lg:m-0 lg:p-16'>
-          <div className='flex flex-col mb-4 space-y-3 text-center lg:text-md lg:text-left'>
+        <div className='flex flex-col items-center p-2 m-2 space-y-10  bg-white shadow-2xl lg:flex-row lg:space-y-0 lg:space-x-10 lg:m-0 lg:p-16'>
+          <div className='flex flex-col mb-2 lg:mb-4 space-y-3 text-center  lg:text-md lg:text-left'>
             <p>&#x1F44B; hello, i am Zbigniew</p>
-            <h1 className='max-w-sm text-2xl font-medium pb-5 lg:text-3xl'>
+            <h1 className='max-w-sm text-xl font-medium lg:pb-5 lg:text-3xl'>
               I work as <span className='text-red-500'> frontend </span> dev and{' '}
               <span className='text-red-500 '>3D </span>technical generalist.
             </h1>
-            <p className='text-sm max-w-sm font-light lg:text-m'>
+            <p className='text-sm max-w-sm font-light lg:text-md'>
               This site is my R&D project, where i tried to explore connection
               between modern web development and 3D world.
             </p>
 
-            <p className='text-sm max-w-sm font-light'>
+            <p className='text-sm lg:text-md max-w-sm font-light'>
               You can see more here:
             </p>
             {/* LINKS CONTAINER */}
-            <div className='flex flex-col space-y-4 lg:space-y-0 lg:space-x-4 lg:flex-row'>
+            <div className='flex flex-col  lg:space-y-0 lg:space-x-4 lg:flex-row'>
               <a
                 href={BEHANCE_URL}
-                className='flex items-center justify-center py-3 px-5 space-x-3 border-2 border-gray-300 shadow-sm  hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150'
+                className='flex items-center justify-center lg:py-3p x-5 space-x-3 border-2 border-gray-300 lg:shadow-sm  hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150'
               >
                 <FaBehance className='text-xl' />
                 <span>Behance</span>
@@ -54,16 +54,15 @@ function About({ showAbout, setShowAbout }) {
 
               <a
                 href={LINKEDIN_URL}
-                className='flex items-center justify-center py-3 px-5 space-x-3 border-2 border-gray-300  shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150'
+                className='flex items-center justify-center lg:py-3 px-5 space-x-3 border-2 border-gray-300  lg:shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150'
               >
                 <FaLinkedin className='text-xl' />
                 <span>Linkedin</span>
               </a>
             </div>
-          </div>
-
-          <div className='w-32 lg:w-60'>
-            <img src={facePhoto} alt='' className='rounded-full' />
+            <div className='m-auto w-32 lg:w-60'>
+              <img src={facePhoto} alt='' className='rounded-full' />
+            </div>
           </div>
         </div>
       </div>
