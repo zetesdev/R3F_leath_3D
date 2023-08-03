@@ -81,6 +81,7 @@ export function Model(props) {
       dispose={null}
       scale={isMobile.current ? 0.55 : 0.9}
       rotation={isMobile.current ? [-0.17, 0, 1.6] : [0, 0, 0]}
+      position={isMobile.current ? [0, 0.065, 0] : [0, 0, 0]}
     >
       <Float speed={2} floatingRange={[-0.025, 0.025]} rotationIntensity={0.7}>
         <motion.mesh
