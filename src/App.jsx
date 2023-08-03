@@ -4,7 +4,6 @@ import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import Loader from './components/Loader';
 import Experience from './components/Experience';
-import AnimTrigger from './components/AnimTrigger';
 import Titles from './components/Titles';
 import About from './components/AboutDev';
 import ColorChanger from './components/ColorChanger';
@@ -14,19 +13,19 @@ function App() {
   const [showAbout, setShowAbout] = useState(false);
   const [coverColor, setCoverColor] = useState('0x27272a');
   const [loader, setLoader] = useState(true);
-  const [viewportHeight, setViewportHeight] = useState(window.innerHeight); //MOBILE BROWSERS VIEWPORT VH FIX
+  // const [viewportHeight, setViewportHeight] = useState(window.innerHeight); //MOBILE BROWSERS VIEWPORT VH FIX
 
-  const handleWindowResize = () => {
-    setViewportHeight(window.innerHeight);
-  };
+  // const handleWindowResize = () => {
+  //   setViewportHeight(window.innerHeight);
+  // };
 
-  useEffect(() => {
-    window.addEventListener('resize', handleWindowResize);
+  // useEffect(() => {
+  //   window.addEventListener('resize', handleWindowResize);
 
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('resize', handleWindowResize);
+  //   };
+  // }, []);
 
   const handleSetCoverColor = (arg) => {
     setCoverColor(arg);
@@ -91,12 +90,13 @@ function App() {
 
   return (
     <>
-      <div style={{ height: viewportHeight }}>
+      <div className='h-screen w-full'>
+        {/* <div style={{ height: viewportHeight }}> */}
         {loader && <Loader onComplete={() => setLoader(false)} />}
         <Canvas
           onWheel={handleChangeProgress}
-          onTouchMove={handleChangeProgress}
-          onTouchEnd={handleChangeProgress}
+          // onTouchMove={handleChangeProgress}
+          // onTouchEnd={handleChangeProgress}
         >
           <Suspense>
             <Experience progress={progress} coverColor={coverColor} />
@@ -112,14 +112,8 @@ function App() {
           decrementProgress={decrementProgress}
           incrementProgress={incrementProgress}
         />
+        {/* </div> */}
       </div>
-      {/* <AnimTrigger progress={progress} changeProgress={incrementProgress} />
-      <button
-        onClick={decrementProgress}
-        className='z-23 fixed bottom-10 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-red-500 w-auto h-11 rounded-md'
-      >
-        DEBUG
-      </button> */}
     </>
   );
 }

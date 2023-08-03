@@ -34,19 +34,19 @@ function About({ showAbout, setShowAbout }) {
               I work as <span className='text-red-500'> frontend </span> dev and{' '}
               <span className='text-red-500 '>3D </span>technical generalist.
             </h1>
-            <p className=' text-sm max-w-sm font-light lg:text-md'>
+            <p className='text-sm max-w-sm font-light lg:text-lg'>
               This site is my R&D project, where i tried to explore connection
               between modern web development and 3D world.
             </p>
 
-            <p className='hidden lg:block text-sm lg:text-md max-w-sm font-light'>
+            <p className='hidden lg:block text-sm lg:text-lg max-w-sm font-light'>
               You can see more here:
             </p>
             {/* LINKS CONTAINER */}
             <div className='flex flex-col'>
               <a
                 href={BEHANCE_URL}
-                className='flex items-center justify-center lg:py-3 px-5 space-x-3 border-2 border-gray-300 lg:shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150'
+                className='flex items-center justify-center mt-1 lg:py-3 px-5 space-x-3 border-2 border-gray-300 lg:shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150'
               >
                 <FaBehance className='text-xl' />
                 <span>Behance</span>
@@ -54,7 +54,7 @@ function About({ showAbout, setShowAbout }) {
 
               <a
                 href={LINKEDIN_URL}
-                className='flex items-center justify-center lg:py-3 px-5 space-x-3 border-2 border-gray-300 lg:shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150'
+                className='flex items-center justify-center mt-1 lg:py-3 px-5 space-x-3 border-2 border-gray-300 lg:shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150'
               >
                 <FaLinkedin className='text-xl' />
                 <span>Linkedin</span>
