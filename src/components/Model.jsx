@@ -63,7 +63,7 @@ export function Model(props) {
       break;
     case 3:
       SM_screwdriver_01_rotateZ = 3.15;
-      SM_myEmpty_rotateX = 2.5;
+      SM_myEmpty_rotateX = 3;
       break;
     case 4:
       break;
@@ -80,7 +80,7 @@ export function Model(props) {
       {...props}
       dispose={null}
       scale={isMobile.current ? 0.55 : 0.9}
-      rotation={isMobile.current ? [0, -0.2, 1.5] : [0, 0, 0]}
+      rotation={isMobile.current ? [0, 0, 1.6] : [0, 0, 0]}
     >
       <Float speed={2} floatingRange={[-0.025, 0.025]} rotationIntensity={0.7}>
         <motion.mesh
