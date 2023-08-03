@@ -19,7 +19,7 @@ function Experience({ progress, coverColor }) {
     [-0.48, 0.66, 0.84],
     [0.17, 0.6, 0.98],
     [0.59, 0.32, 0.73],
-    [-1.2, 0.13, 0.62],
+    [0.17, 0.6, 0.98],
   ];
 
   const camRotations = [
@@ -28,7 +28,7 @@ function Experience({ progress, coverColor }) {
     [-0.67, -0.42, -0.31],
     [-0.54, 0.14, 0.08],
     [-0.41, 0.63, 0.25],
-    [-0.2, -1.08, -0.18],
+    [-0.54, 0.14, 0.08],
   ];
 
   // CAMERA CONSOLE LOGGER
