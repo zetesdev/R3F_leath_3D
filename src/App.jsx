@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useRef, Suspense } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import Loader from './components/Loader';
@@ -14,6 +14,19 @@ function App() {
   const [showAbout, setShowAbout] = useState(false);
   const [coverColor, setCoverColor] = useState('0x27272a');
   const [loader, setLoader] = useState(true);
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight); //MOBILE BROWSERS VIEWPORT VH FIX
+
+  const handleWindowResize = () => {
+    setViewportHeight(window.innerHeight);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
 
   const handleSetCoverColor = (arg) => {
     setCoverColor(arg);
@@ -78,27 +91,28 @@ function App() {
 
   return (
     <>
-      {loader && <Loader onComplete={() => setLoader(false)} />}
-      <Canvas
-        onWheel={handleChangeProgress}
-        onTouchMove={handleChangeProgress}
-        onTouchEnd={handleChangeProgress}
-      >
-        <Suspense>
-          <Experience progress={progress} coverColor={coverColor} />
-        </Suspense>
-      </Canvas>
+      <div style={{ height: viewportHeight }}>
+        {loader && <Loader onComplete={() => setLoader(false)} />}
+        <Canvas
+          onWheel={handleChangeProgress}
+          onTouchMove={handleChangeProgress}
+          onTouchEnd={handleChangeProgress}
+        >
+          <Suspense>
+            <Experience progress={progress} coverColor={coverColor} />
+          </Suspense>
+        </Canvas>
 
-      <About showAbout={showAbout} setShowAbout={handleSetShowAbout} />
-      <Titles progress={progress} />
+        <About showAbout={showAbout} setShowAbout={handleSetShowAbout} />
+        <Titles progress={progress} />
 
-      <ColorChanger
-        progress={progress}
-        setCoverColor={handleSetCoverColor}
-        decrementProgress={decrementProgress}
-        incrementProgress={incrementProgress}
-      />
-
+        <ColorChanger
+          progress={progress}
+          setCoverColor={handleSetCoverColor}
+          decrementProgress={decrementProgress}
+          incrementProgress={incrementProgress}
+        />
+      </div>
       {/* <AnimTrigger progress={progress} changeProgress={incrementProgress} />
       <button
         onClick={decrementProgress}
