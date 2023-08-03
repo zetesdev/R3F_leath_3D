@@ -56,7 +56,7 @@ function ColorChanger({
 
   return (
     <div className='flex flex-col items-center fixed z-20 bottom-3 lg:bottom-5 left-1/2 -translate-x-1/2 pointer-events-none touch-events-none'>
-      <h3 className='font-light text-xs lg:text-sm text-white '>
+      <h3 className='font-light text-xs lg:text-lg text-white '>
         press to progress
       </h3>
       <div className='flex flex-row items-center text-3xl lg:text-4xl text-white mb-2 '>
