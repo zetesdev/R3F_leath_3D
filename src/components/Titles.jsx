@@ -16,12 +16,12 @@ function Titles({ progress }) {
     { x: '', y: '' },
     { x: 'lg:translate-x-32', y: 'lg:-translate-y-64' },
     { x: '', y: '' },
-    { x: 'lg:translate-x-64', y: 'lg:translate-y-48' },
+    { x: 'lg:-translate-x-64', y: 'lg:-translate-y-48' },
   ];
 
   return (
     <>
-      <div className='fixed z-1 top-10 left-1/2 lg:top-1/2 left-1/2 lg:-translate-y-1/2 -translate-x-1/2 pointer-events-none touch-events-none'>
+      <div className='fixed z-1 top-10 left-1/2 lg:top-1/2  lg:-translate-y-1/2 -translate-x-1/2 pointer-events-none touch-events-none'>
         <motion.div
           key={progress}
           initial={{ opacity: 0 }}

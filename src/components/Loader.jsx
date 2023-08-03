@@ -12,7 +12,7 @@ function Loader({ onComplete }) {
 
   return (
     <div className='z-50 text-white fixed flex flex-col items-center justify-center top-0 left-0 w-full h-full text-6xl pointer-events-none touch-events-non opacity-100 gradient'>
-      <div className='text-xl'>loading model: </div>
+      <div className='text-lg'>3D model loading : </div>
       <div>{Math.round(progress)} %</div>
     </div>
   );
