@@ -61,7 +61,7 @@ function About({ showAbout, setShowAbout }) {
               </a>
             </div>
           </div>
-          <div className='m-auto pt-2 w-24 lg:w-56 lg:pt-5'>
+          <div className='hidden lg:block m-auto pt-2 w-24 lg:w-56 lg:pt-5'>
             <img src={facePhoto} alt='' className='rounded-full' />
           </div>
         </div>
