@@ -29,7 +29,7 @@ function Titles({ progress }) {
           transition={{ duration: 5, delay: 0.7 }}
         >
           <div
-            className={`${offsets[progress].x} ${offsets[progress].y} px-2 lg:px-3 font-light bg-slate-100 overflow-hidden`}
+            className={`${offsets[progress].x} ${offsets[progress].y} px-1 lg:px-3 font-light bg-slate-100 overflow-hidden`}
           >
             <motion.h1
               initial={{ x: -700 }}
