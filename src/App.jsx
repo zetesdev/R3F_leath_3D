@@ -90,7 +90,7 @@ function App() {
 
   return (
     <>
-      <div className='h-screen w-full'>
+      <div className='fixed top-0 left-0 h-full w-full'>
         {/* <div style={{ height: viewportHeight }}> */}
         {loader && <Loader onComplete={() => setLoader(false)} />}
         <Canvas
