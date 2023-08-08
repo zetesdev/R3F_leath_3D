@@ -35,7 +35,7 @@ function Titles({ progress }) {
               initial={{ x: -700 }}
               animate={{ x: 0 }}
               transition={{ delay: 0.6, duration: 0.7 }}
-              className='text-lg px-2 pr-20 text-start sm:text-2xl portrait:md:max-lg:text-5xl md:text-2xl lg:text-5xl '
+              className='text-lg px-2 pr-20 text-start sm:text-xl md:text-xl portrait:md:max-lg:text-5xl  lg:text-5xl '
             >
               {titles[progress].title}
             </motion.h1>
@@ -43,7 +43,7 @@ function Titles({ progress }) {
               initial={{ x: 700 }}
               animate={{ x: 0 }}
               transition={{ delay: 1, duration: 0.7 }}
-              className='text-sm text-end pl-3 pr-2 sm:text-sm md:text-lg portrait:md:max-lg:text-2xl lg:text-2xl'
+              className='text-sm text-end pl-3 pr-2 sm:text-sm md:text-base portrait:md:max-lg:text-2xl lg:text-2xl'
             >
               {titles[progress].subtitle}
             </motion.h3>
