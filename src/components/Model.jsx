@@ -8,7 +8,7 @@ export function Model(props) {
   const { progress, coverColor } = props;
   const { nodes } = useGLTF('/models/tool_01.glb');
   const { viewport } = useThree();
-  const baseScale = isMobile ? 1.1 : 0.85;
+  const baseScale = isMobile ? 1.05 : 0.85;
   const isVertical = useRef(false);
   isVertical.current = viewport.width < 1;
   console.log(isVertical.current);
@@ -83,7 +83,7 @@ export function Model(props) {
       dispose={null}
       scale={isVertical.current ? 0.6 : baseScale}
       rotation={isVertical.current ? [-0.17, 0, 1.6] : [0, 0, 0]}
-      position={isMobile ? [0, 0.065, 0] : [0, 0, 0]}
+      position={isMobile ? [0, 0.055, 0] : [0, 0, 0]}
     >
       <Float speed={2} floatingRange={[-0.025, 0.025]} rotationIntensity={0.7}>
         <motion.mesh

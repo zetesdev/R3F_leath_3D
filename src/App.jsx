@@ -31,7 +31,7 @@ function App() {
     setCoverColor(arg);
   };
 
-  const handleSetShowAbout = () => {
+  const handleSetShowAbout = (e) => {
     setShowAbout((prevShowAbout) => !prevShowAbout);
   };
 
