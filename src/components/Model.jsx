@@ -8,7 +8,7 @@ export function Model(props) {
   const { progress, coverColor } = props;
   const { nodes } = useGLTF('/models/tool_01.glb');
   const { viewport } = useThree();
-  const baseScale = isMobile ? 1.25 : 0.85;
+  const baseScale = isMobile ? 1.1 : 0.85;
   const isVertical = useRef(false);
   isVertical.current = viewport.width < 1;
   console.log(isVertical.current);
